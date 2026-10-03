@@ -1,0 +1,17 @@
+/* Loaded only inside <noscript>: keeps navigation usable without JavaScript. */
+.menu-toggle { display: none; }
+.site-header { position: static; height: auto; }
+.site-header__inner { flex-wrap: wrap; height: auto; padding-block: 8px; }
+.site-nav {
+  display: block;
+  position: static;
+  max-height: none;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: none;
+}
+.site-nav ul { display: flex; flex-wrap: wrap; gap: 0 12px; }
+.site-nav li a { min-height: 44px; border: 0; }
+.site-nav__cta { display: none; }
+.sticky-cta { display: none; }

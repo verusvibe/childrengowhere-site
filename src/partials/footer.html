@@ -1,0 +1,33 @@
+<footer class="site-footer" data-sticky-stop>
+  <div class="container site-footer__grid">
+    <div>
+      <a class="brand" href="{{BASE}}/" aria-label="ChildrenGoWhere home">
+        {{> wordmark}}
+      </a>
+      <p class="site-footer__tagline">{{cfg.tagline}}</p>
+      <p class="site-footer__note">Free for iPhone. Made for families in Singapore.</p>
+    </div>
+    <nav aria-label="Product">
+      <h2 class="footer-title">Product</h2>
+      <ul>
+        <li><a href="{{BASE}}/#features">Features</a></li>
+        <li><a href="{{BASE}}/#how-it-works">How it works</a></li>
+        <li><a href="{{BASE}}/#one-pager">One-Pager</a></li>
+        <li><a href="{{BASE}}/#north-star">North Star Metric</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Help and legal">
+      <h2 class="footer-title">Help &amp; legal</h2>
+      <ul>
+        <li><a href="{{BASE}}/support/">Support</a></li>
+        <li><a href="{{BASE}}/privacy/">Privacy Policy</a></li>
+        <li><a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container site-footer__bottom">
+    <p>&copy; {{YEAR}} ChildrenGoWhere. All rights reserved.</p>
+    <p>Apple, the Apple logo, iPhone and App Store are trademarks of Apple Inc.</p>
+    <a href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
+  </div>
+</footer>

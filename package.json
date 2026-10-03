@@ -1,0 +1,18 @@
+{
+  "name": "childrengowhere-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marketing, support and privacy site for the ChildrenGoWhere iOS app (static, GitHub Pages).",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "images": "node scripts/images.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "serve": "node scripts/serve.mjs",
+    "test": "npm run build && npm run check"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.0"
+  }
+}

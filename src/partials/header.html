@@ -1,0 +1,24 @@
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="{{BASE}}/" aria-label="ChildrenGoWhere home">
+      <picture><source type="image/webp" srcset="{{BASE}}/assets/img/app-icon-48.webp 1x, {{BASE}}/assets/img/app-icon-96.webp 2x"><img src="{{BASE}}/assets/img/app-icon-48.png" srcset="{{BASE}}/assets/img/app-icon-48.png 1x, {{BASE}}/assets/img/app-icon-96.png 2x" class="brand__icon" width="36" height="36" alt=""></picture>
+      {{> wordmark}}
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="menu-toggle__bars" aria-hidden="true"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="{{BASE}}/#features">Features</a></li>
+        <li><a href="{{BASE}}/#how-it-works">How it works</a></li>
+        <li><a href="{{BASE}}/#one-pager">One-Pager</a></li>
+        <li><a href="{{BASE}}/#north-star">North Star</a></li>
+        <li><a href="{{BASE}}/support/" data-nav="/support/">Support</a></li>
+        <li><a href="{{BASE}}/privacy/" data-nav="/privacy/">Privacy</a></li>
+      </ul>
+      <div class="site-nav__cta">{{> cta size=sm short=1}}</div>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dist-*/
+.DS_Store
+.env
+.env.*
+*.plist
+*.log
+.claude/
+
+# Local authoring notes, not part of the public site
+LANDING_PAGE_PROMPT.md

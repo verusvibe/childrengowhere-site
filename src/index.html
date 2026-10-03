@@ -1,0 +1,480 @@
+---
+title: ChildrenGoWhere: Kid-Friendly Places & Events Singapore
+description: Find kid-friendly places and family events in Singapore. Filter by age, budget and weather, plan the visit and get directions. Free for iPhone.
+schema: org,website,app,webpage,faq
+preload: shot-01-phone
+bodyClass: is-landing
+---
+<section class="hero" id="hero" aria-labelledby="hero-title">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow"><span aria-hidden="true">📍</span> Made for Singapore families</p>
+      <h1 id="hero-title">Find your next <mark class="hl">family day out</mark> in Singapore</h1>
+      <p class="lead">Kid-friendly places and events, filtered by your child’s age, your budget and the weather, with opening hours, crowd levels and directions in one place.</p>
+      <div class="hero__cta" data-hero-cta>
+        {{> cta}}
+        <a class="btn btn--ghost" href="#how-it-works">See how it works</a>
+      </div>
+      {{> cta-note}}
+      <ul class="chips" aria-label="Highlights">
+        <li>Free, no in-app purchases</li>
+        <li>No sign-up needed</li>
+        <li>Directions in Apple Maps</li>
+        <li>Made for Singapore</li>
+      </ul>
+    </div>
+    <div class="hero__media">
+      <div class="device">
+        {{> picture id=shot-01-phone alt="ChildrenGoWhere home screen showing weekend picks, nearby places and trending family spots in Singapore" sizes=@hero loading=eager priority=1}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="problem" aria-labelledby="problem-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">The problem</p>
+      <h2 id="problem-title">Planning a family outing shouldn’t take five tabs and a group chat.</h2>
+      <p class="lead">Finding somewhere that really works for your family means juggling a lot at once, and the answers are scattered across apps, maps and chats.</p>
+    </div>
+    <div class="grid grid--3">
+      <article class="pastel p-pink">
+        <div class="icon-bubble" aria-hidden="true">🎂</div>
+        <h3>Is it right for their age?</h3>
+        <p>A toddler playground isn’t the same as a day out for a nine-year-old.</p>
+      </article>
+      <article class="pastel p-yellow">
+        <div class="icon-bubble" aria-hidden="true">💸</div>
+        <h3>Will it fit the budget?</h3>
+        <p>Free, under $10 or a splurge? You want to know before you leave home.</p>
+      </article>
+      <article class="pastel p-blue">
+        <div class="icon-bubble" aria-hidden="true">☔</div>
+        <h3>What if it rains?</h3>
+        <p>Indoor or outdoor, and a backup plan for a wet weekend.</p>
+      </article>
+      <article class="pastel p-mint">
+        <div class="icon-bubble" aria-hidden="true">👥</div>
+        <h3>How busy will it be?</h3>
+        <p>Crowd levels and the best time to go can make or break the day.</p>
+      </article>
+      <article class="pastel p-purple">
+        <div class="icon-bubble" aria-hidden="true">🚇</div>
+        <h3>How do we get there?</h3>
+        <p>The nearest MRT and bus stop, parking, and how long the trip takes.</p>
+      </article>
+      <article class="pastel p-orange">
+        <div class="icon-bubble" aria-hidden="true">♿</div>
+        <h3>Will it work for everyone?</h3>
+        <p>Accessibility, facilities and safety notes that reviews rarely cover.</p>
+      </article>
+    </div>
+    <div class="pivot">
+      <h3>One app. All the answers.</h3>
+      <p>ChildrenGoWhere brings age, budget, weather and logistics together, so you can choose a place with confidence and get going.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features" aria-labelledby="features-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Features</p>
+      <h2 id="features-title">Everything you need to pick the right place</h2>
+      <p class="lead">From browsing ideas to getting through the front door, each step is built around how parents actually decide.</p>
+    </div>
+
+    <article class="feature">
+      <div class="feature__body">
+        <span class="tag-pill p-blue">Browse</span>
+        <h3>Every kind of fun, sorted</h3>
+        <p>From playgrounds to museums, jump straight to the kind of outing you’re in the mood for.</p>
+        <ul class="ticks">
+          <li>12 categories, including Arts &amp; Crafts, Water Play, Nature Trails and Animal Farms</li>
+          <li>Browse by age band, from babies to teens (0–16)</li>
+          <li>Budget rows for Free, under $10, under $20 and premium days out</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <div class="device">
+          {{> picture id=shot-02-phone alt="Browse by Category screen showing twelve family activity categories including Arts & Crafts, Arcades & Games, Outdoor Play and Water Play" sizes=@feature}}
+        </div>
+      </div>
+    </article>
+
+    <article class="feature feature--reverse">
+      <div class="feature__body">
+        <span class="tag-pill p-mint">Search &amp; filter</span>
+        <h3>Right age. Right budget.</h3>
+        <p>Narrow things down in a few taps, or start from a quick filter and go from there.</p>
+        <ul class="ticks">
+          <li>Quick filters: Open Now, Free Entry, Indoor, Outdoor, Kid-Friendly, Rainy Day, Weekend Picks and Birthday Party</li>
+          <li>Filter by distance, category, age group and price range</li>
+          <li>Six ways to sort, from top rated to nearest</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <div class="device">
+          {{> picture id=shot-05-phone alt="Filters sheet with a distance slider, category tiles, age groups and price range options including Free" sizes=@feature}}
+        </div>
+      </div>
+    </article>
+
+    <article class="feature">
+      <div class="feature__body">
+        <span class="tag-pill p-pink">Place details</span>
+        <h3>Everything parents need</h3>
+        <p>Each place page puts the practical details up front, so you’re not hunting across tabs.</p>
+        <ul class="ticks">
+          <li>Opening status and weekly hours at a glance</li>
+          <li>A “Good for ages” guide from babies to teens</li>
+          <li>One-tap Directions, Save, Call and Website</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <div class="device">
+          {{> picture id=shot-03-phone alt="Singapore Zoo place page with opening hours, a Good for Ages guide and Directions, Save, Call and Website buttons" sizes=@feature}}
+        </div>
+      </div>
+    </article>
+
+    <article class="feature feature--reverse">
+      <div class="feature__body">
+        <span class="tag-pill p-yellow">Plan your visit</span>
+        <h3>Plan the perfect visit</h3>
+        <p>Beat the crowds and make the most of your time once you’re there.</p>
+        <ul class="ticks">
+          <li>Best time to visit and weekly crowd levels</li>
+          <li>Recommended visit duration, so you can plan the day</li>
+          <li>Facilities, parent information, safety and accessibility notes, where available</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <div class="device">
+          {{> picture id=shot-04-phone alt="Plan the visit screen showing facilities, best time to visit, recommended visit duration and parent information" sizes=@feature}}
+        </div>
+      </div>
+    </article>
+
+    <article class="feature">
+      <div class="feature__body">
+        <span class="tag-pill p-purple">Events</span>
+        <h3>Never miss a family event</h3>
+        <p>Festivals and seasonal events sit alongside places, with real dates you can act on.</p>
+        <ul class="ticks">
+          <li>Add an event to your calendar in one tap</li>
+          <li>ChildrenGoWhere only adds the events you choose and never reads your calendar</li>
+          <li>Directions and sharing are built in</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <div class="device">
+          {{> picture id=shot-06-phone alt="Chinatown Mid-Autumn Festival event page with dates and Directions, Calendar, Share and Website buttons" sizes=@feature}}
+        </div>
+      </div>
+    </article>
+
+    <article class="feature feature--reverse">
+      <div class="feature__body">
+        <span class="tag-pill p-orange">Getting there</span>
+        <h3>Get there the easy way</h3>
+        <p>Open directions in Apple Maps by car, on foot or on public transport.</p>
+        <ul class="ticks">
+          <li>Nearest MRT and bus stop, plus parking information, where available</li>
+          <li>Share a place with family on WhatsApp, Messages or Facebook</li>
+          <li>Estimated travel time from where you are, if you allow location</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <div class="device">
+          {{> picture id=shot-07-phone alt="Place map in Apple Maps with a Show Directions button and options to share, save to a collection and mark as visited" sizes=@feature}}
+        </div>
+      </div>
+    </article>
+
+    <article class="feature">
+      <div class="feature__body">
+        <span class="tag-pill p-green">Save &amp; organise</span>
+        <h3>Save it for the weekend</h3>
+        <p>Build your own shortlists for the days ahead.</p>
+        <ul class="ticks">
+          <li>Collections like “Weekend Adventures” and “Rainy Day Backup Plans”</li>
+          <li>Mark places as visited and revisit recently viewed ones</li>
+          <li>Use it as a guest with no sign-up, or sign in to sync across your devices</li>
+        </ul>
+      </div>
+      <div class="feature__media">
+        <div class="device">
+          {{> picture id=shot-08-phone alt="Save to collection sheet listing the collections Weekend Adventures and Rainy Day Backup Plans with a New Collection option" sizes=@feature}}
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section section--alt" id="how-it-works" aria-labelledby="how-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="kicker">How it works</p>
+      <h2 id="how-title">From “what should we do?” to “let’s go” in three steps</h2>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <h3>Filter</h3>
+        <p>Choose an age, a budget and a vibe, or tap a quick filter like Rainy Day or Free Entry.</p>
+      </li>
+      <li class="step">
+        <h3>Plan</h3>
+        <p>Check opening hours, crowd levels, the best time to go and how long to stay.</p>
+      </li>
+      <li class="step">
+        <h3>Go &amp; save</h3>
+        <p>Get directions in Apple Maps, add events to your calendar and save favourites to a collection.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="screenshots" aria-labelledby="gallery-title" data-carousel>
+  <div class="container gallery__bar">
+    <div class="section-head">
+      <p class="kicker">Screenshots</p>
+      <h2 id="gallery-title">See it in action</h2>
+    </div>
+    <div class="gallery__btns" hidden>
+      <button type="button" class="icon-btn" data-prev aria-label="Previous screenshots">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <button type="button" class="icon-btn" data-next aria-label="Next screenshots">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="gallery__track" data-track tabindex="0" role="region" aria-label="App screenshots, scroll sideways to see more">
+    <figure class="gallery__item">
+      {{> picture id=shot-01-full alt="App Store screenshot: Find your next family day out, with the ChildrenGoWhere home screen" sizes=@gallery}}
+      <figcaption>Home: weekend picks, nearby and trending</figcaption>
+    </figure>
+    <figure class="gallery__item">
+      {{> picture id=shot-02-full alt="App Store screenshot: Every kind of fun, sorted, showing 12 categories" sizes=@gallery}}
+      <figcaption>Browse 12 categories of family fun</figcaption>
+    </figure>
+    <figure class="gallery__item">
+      {{> picture id=shot-03-full alt="App Store screenshot: Everything parents need, showing a place page with hours and ages" sizes=@gallery}}
+      <figcaption>Place details with hours and ages</figcaption>
+    </figure>
+    <figure class="gallery__item">
+      {{> picture id=shot-04-full alt="App Store screenshot: Plan the perfect visit, showing best time to visit and visit duration" sizes=@gallery}}
+      <figcaption>Best time to visit and how long to stay</figcaption>
+    </figure>
+    <figure class="gallery__item">
+      {{> picture id=shot-05-full alt="App Store screenshot: Right age, right budget, showing the filters sheet" sizes=@gallery}}
+      <figcaption>Filter by age, price, distance and category</figcaption>
+    </figure>
+    <figure class="gallery__item">
+      {{> picture id=shot-06-full alt="App Store screenshot: Never miss a family event, showing an event page with one-tap calendar" sizes=@gallery}}
+      <figcaption>Family events with one-tap calendar</figcaption>
+    </figure>
+    <figure class="gallery__item">
+      {{> picture id=shot-07-full alt="App Store screenshot: Get there the easy way, showing Apple Maps directions and sharing" sizes=@gallery}}
+      <figcaption>Apple Maps directions and sharing</figcaption>
+    </figure>
+    <figure class="gallery__item">
+      {{> picture id=shot-08-full alt="App Store screenshot: Save it for the weekend, showing the save to collection sheet" sizes=@gallery}}
+      <figcaption>Save places to your own collections</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section section--alt" id="one-pager" aria-labelledby="onepager-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Product</p>
+      <h2 id="onepager-title">One-Pager</h2>
+      <p class="lead">What ChildrenGoWhere is, who it’s for and why it exists, on a single page.</p>
+    </div>
+
+    <article class="onepager">
+      <div class="onepager__head">
+        <div class="onepager__brand">
+          <picture><source type="image/webp" srcset="{{BASE}}/assets/img/app-icon-96.webp"><img class="onepager__icon" src="{{BASE}}/assets/img/app-icon-96.png" width="96" height="96" alt="" loading="lazy" decoding="async"></picture>
+          <div>
+            {{> wordmark}}
+            <span class="visually-hidden">ChildrenGoWhere</span>
+            <p>{{cfg.tagline}}</p>
+          </div>
+        </div>
+        <button type="button" class="btn btn--ghost btn--sm" data-print data-no-print hidden>Print / Save as PDF</button>
+      </div>
+
+      <div class="op-grid">
+        <div class="op-block">
+          <h3>The problem</h3>
+          <p>Finding a family activity that fits means checking age suitability, indoor or outdoor, price, opening hours, crowd levels and accessibility across several apps and group chats. There is no single place that filters for what parents actually care about.</p>
+        </div>
+        <div class="op-block">
+          <h3>The solution</h3>
+          <p>One search-and-filter experience where age, budget, indoor or outdoor, and rainy-day plans are first-class filters, and every place page shows the logistics parents would otherwise hunt for separately.</p>
+        </div>
+        <div class="op-block">
+          <h3>Who it’s for</h3>
+          <p>Parents and caregivers of children aged 0–16 in Singapore, planning anything from a quick rainy-afternoon outing to a birthday party.</p>
+        </div>
+        <div class="op-block">
+          <h3>Why it’s different</h3>
+          <p>It is built around the variables that decide a family outing (age, budget, weather and logistics), not a generic places directory with star ratings bolted on.</p>
+        </div>
+      </div>
+
+      <h3>Key features</h3>
+      <ul class="op-features">
+        <li><strong>Smart filtering</strong>Age, budget, category, distance and quick filters</li>
+        <li><strong>Plan the visit</strong>Hours, crowd levels, best time and visit duration</li>
+        <li><strong>Place details</strong>Good for ages, facilities, safety and accessibility</li>
+        <li><strong>Events</strong>Family festivals with one-tap add to calendar</li>
+        <li><strong>Directions</strong>Apple Maps by car, on foot or public transport</li>
+        <li><strong>Collections</strong>Favourites, named collections and visited history</li>
+        <li><strong>Family profiles</strong>Family members with their own age groups</li>
+        <li><strong>Sync or guest</strong>Sign in to sync devices, or use it as a guest</li>
+      </ul>
+
+      <h3>At a glance</h3>
+      <dl class="glance">
+        <div><dt>Platform</dt><dd>iPhone, iOS 18 or later</dd></div>
+        <div><dt>Built with</dt><dd>SwiftUI</dd></div>
+        <div><dt>Backend</dt><dd>Firebase</dd></div>
+        <div><dt>Market</dt><dd>Singapore</dd></div>
+        <div><dt>Price</dt><dd>Free, no in-app purchases</dd></div>
+        <div><dt>Sign-in</dt><dd>Apple, email or guest</dd></div>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="north-star" aria-labelledby="ns-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Product strategy</p>
+      <h2 id="ns-title">North Star Metric</h2>
+      <p class="lead">The one number that tells us whether ChildrenGoWhere is helping families get out of the door, not just browse.</p>
+    </div>
+
+    <div class="nsm">
+      <span class="nsm__label">Proposed North Star</span>
+      <p class="nsm__metric">Weekly Outings Planned per Active Family</p>
+      <p>Families who take a concrete “let’s go” step, such as requesting directions to a place, at least once in a week, out of all families active that week.</p>
+      <span class="nsm__formula">Families with 1 or more go-actions in the week ÷ families active that week</span>
+    </div>
+
+    <ol class="flow" aria-label="How everyday actions lead to the North Star">
+      <li class="flow__step">
+        <h3>1. Discover</h3>
+        <p>Families look for ideas.</p>
+        <ul class="metric-list">
+          <li>Searches performed <span class="tag tag--ok">Instrumented today</span></li>
+          <li>Places viewed <span class="tag tag--ok">Instrumented today</span></li>
+        </ul>
+      </li>
+      <li class="flow__step">
+        <h3>2. Decide</h3>
+        <p>Families shortlist what fits.</p>
+        <ul class="metric-list">
+          <li>Favourites saved <span class="tag tag--ok">Instrumented today</span></li>
+          <li>Collections created <span class="tag tag--todo">To instrument</span></li>
+        </ul>
+      </li>
+      <li class="flow__step">
+        <h3>3. Go</h3>
+        <p>Families commit to an outing.</p>
+        <ul class="metric-list">
+          <li>Directions requested <span class="tag tag--ok">Instrumented today</span></li>
+          <li>Events added to calendar <span class="tag tag--todo">To instrument</span></li>
+        </ul>
+      </li>
+      <li class="flow__step flow__step--goal">
+        <h3>North Star</h3>
+        <p>Weekly Outings Planned per Active Family</p>
+        <ul class="metric-list">
+          <li>Weekly active families <span class="tag tag--todo">To define</span></li>
+        </ul>
+      </li>
+    </ol>
+
+    <div class="grid grid--2">
+      <div class="card">
+        <h3>Why this metric</h3>
+        <p>Browsing and filtering are means, not ends. The moment of real value is when a family decides “we’re going here” and asks for directions. That is a stronger signal than a search or a save, and it maps to an event the app already logs (<code>directions_requested</code>).</p>
+      </div>
+      <div class="card">
+        <h3>Guardrail metrics</h3>
+        <p>These should stay healthy while the North Star grows:</p>
+        <ul>
+          <li><strong>Crash-free rate</strong>, from Crashlytics</li>
+          <li><strong>Week-2 retention</strong>, from Firebase Analytics</li>
+          <li><strong>Search relevance</strong>, for example searches that lead to a place view</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note">
+      <p><strong>This is a proposed metric, not an adopted company target.</strong> “Instrumented today” means the app already logs the event through Firebase Analytics. Figures only include people who leave Analytics switched on in Privacy Settings.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="kicker">FAQ</p>
+      <h2 id="faq-title">Questions parents ask</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item">
+        <summary>Is ChildrenGoWhere free?</summary>
+        <div class="faq-answer"><p>Yes. The app is free to download and use, with no in-app purchases or subscriptions.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Which places does it cover?</summary>
+        <div class="faq-answer"><p>ChildrenGoWhere is built for families in Singapore. The places and events in the app are Singapore locations.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need an account?</summary>
+        <div class="faq-answer"><p>No. You can continue as a guest and start exploring straight away. Signing in with Apple or email lets your favourites, collections and family members sync across your devices.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>How does it help me find the right age and budget?</summary>
+        <div class="faq-answer"><p>Browse by age band (from babies to teens) or by budget (Free, under $10, under $20 or premium), and use quick filters such as Rainy Day, Indoor, Outdoor, Kid-Friendly and Birthday Party. Advanced filters let you narrow by distance, category and price.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Does the app use my location?</summary>
+        <div class="faq-answer"><p>Only if you allow it. Location is used to show places near you and estimate travel time. You can switch it off at any time in Me &gt; Privacy Settings, or in your iPhone’s Settings.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Will it read my calendar?</summary>
+        <div class="faq-answer"><p>No. When you add an event, ChildrenGoWhere asks permission to add it to your calendar. It cannot read your existing events.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What do I need to run it?</summary>
+        <div class="faq-answer"><p>An iPhone running iOS 18 or later.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>How do I delete my account and data?</summary>
+        <div class="faq-answer"><p>Go to Me &gt; Settings &gt; Privacy Settings &gt; Delete Account. If you need help, or want us to confirm that your saved data has been erased, email <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a>.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="download" data-sticky-stop aria-labelledby="download-title">
+  <div class="container">
+    <div class="cta-band on-dark">
+      <h2 id="download-title">Discover amazing places and activities your kids will love.</h2>
+      <p>Free for iPhone. No sign-up needed to start exploring.</p>
+      {{> cta variant=light}}
+      {{> cta-note}}
+    </div>
+  </div>
+</section>
+
+{{> sticky-cta}}

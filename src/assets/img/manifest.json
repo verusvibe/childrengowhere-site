@@ -1,0 +1,177 @@
+{
+  "shot-01-full": {
+    "width": 1284,
+    "height": 2778,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "shot-01-phone": {
+    "width": 1284,
+    "height": 2188,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "shot-02-full": {
+    "width": 1284,
+    "height": 2778,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "shot-02-phone": {
+    "width": 1284,
+    "height": 2188,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "shot-03-full": {
+    "width": 1284,
+    "height": 2778,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "shot-03-phone": {
+    "width": 1284,
+    "height": 2188,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "shot-04-full": {
+    "width": 1284,
+    "height": 2778,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "shot-04-phone": {
+    "width": 1284,
+    "height": 2188,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "shot-05-full": {
+    "width": 1284,
+    "height": 2778,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "shot-05-phone": {
+    "width": 1284,
+    "height": 2188,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "shot-06-full": {
+    "width": 1284,
+    "height": 2778,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "shot-06-phone": {
+    "width": 1284,
+    "height": 2188,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "shot-07-full": {
+    "width": 1284,
+    "height": 2778,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "shot-07-phone": {
+    "width": 1284,
+    "height": 2188,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "shot-08-full": {
+    "width": 1284,
+    "height": 2778,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "shot-08-phone": {
+    "width": 1284,
+    "height": 2188,
+    "widths": [
+      320,
+      480,
+      640,
+      960
+    ]
+  },
+  "app-icon": {
+    "width": 96,
+    "height": 96,
+    "widths": [
+      48,
+      96
+    ]
+  },
+  "wordmark": {
+    "width": 600,
+    "height": 53,
+    "widths": [
+      600
+    ]
+  }
+}

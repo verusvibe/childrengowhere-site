@@ -1,0 +1,141 @@
+---
+title: ChildrenGoWhere Privacy Policy: How We Handle Your Data
+description: How ChildrenGoWhere collects, uses and protects your information, including location, family profiles and analytics, and the choices you control.
+schema: org,website,webpage,breadcrumb
+breadcrumb: Privacy Policy
+modified: cfg.privacyUpdated
+---
+<!--
+  DRAFT: written from the app's actual behaviour (iOS source, FEATURES.md, privacy toggles).
+  Needs legal review before launch. When the text changes, update privacyUpdated and
+  privacyUpdatedLabel in site.config.json (they also drive the sitemap lastmod and JSON-LD).
+  Open items for the app team:
+    - Account deletion currently removes the profile document and sign-in only. When it also
+      removes collections, family members and the Storage avatar, simplify section 8.
+    - Google and Facebook sign-in buttons exist but are not configured. Add them to section 2
+      if/when they ship.
+-->
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{BASE}}/">Home</a> / <span aria-current="page">Privacy Policy</span></nav>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: <time datetime="{{cfg.privacyUpdated}}">{{cfg.privacyUpdatedLabel}}</time></p>
+  </div>
+</section>
+
+<div class="container page-body">
+  <div class="prose">
+    <p class="lead">ChildrenGoWhere helps parents and caregivers in Singapore find family-friendly places and events. This policy explains what the app and this website collect, why, and the choices you have.</p>
+
+    <div class="note">
+      <p><strong>In short</strong></p>
+      <ul>
+        <li>You can use the app as a guest, with no name or email.</li>
+        <li>We do not sell your personal information and we do not show ads.</li>
+        <li>Location is optional. It is used to show places near you and estimate travel time.</li>
+        <li>Analytics and crash reporting are on by default, and you can switch them off.</li>
+        <li>You can delete your account from inside the app.</li>
+      </ul>
+    </div>
+
+    <nav class="toc" aria-labelledby="toc-title">
+      <h2 id="toc-title">Contents</h2>
+      <ol>
+        <li><a href="#who-we-are">Who we are</a></li>
+        <li><a href="#what-we-collect">Information we collect</a></li>
+        <li><a href="#how-we-use-it">How we use it</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#sharing">Who we share it with</a></li>
+        <li><a href="#where-stored">Where it is stored</a></li>
+        <li><a href="#your-choices">Your choices and rights</a></li>
+        <li><a href="#retention">Retention and deletion</a></li>
+        <li><a href="#children">Children’s privacy</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="who-we-are">1. Who we are</h2>
+    <p>ChildrenGoWhere (“we”, “us”) is an iPhone app and website for families in Singapore. If you have questions about this policy or your data, email <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a>.</p>
+
+    <h2 id="what-we-collect">2. Information we collect</h2>
+    <h3>Account information</h3>
+    <p>If you sign in with Apple or with email and password, we receive your name and email address. With Sign in with Apple you may choose to hide your email, in which case Apple gives us a private relay address. Passwords are handled by Firebase Authentication and are never visible to us.</p>
+    <p>If you continue as a guest, the app creates an anonymous identifier so that features work. We do not collect your name or email, and your saved items stay on your device.</p>
+
+    <h3>Profile details you choose to add</h3>
+    <p>Display name, phone number, country or region, and a profile photo. When you are signed in, your profile photo is also uploaded to Firebase Storage so it follows you to other devices.</p>
+
+    <h3>Family members</h3>
+    <p>You can add family members, including children, with a name, a relationship (for example child or spouse) and an age group. This is used to tailor suggestions to who is coming along. You manage these entries entirely yourself.</p>
+
+    <h3>Things you save and your preferences</h3>
+    <p>Favourites, collections, visited places, recently viewed places, preferred age range, activities, budget and location, and your notification choices. Recent searches are stored on your device. When you are signed in, saved items and preferences sync to your account so they follow you across devices.</p>
+
+    <h3>Location</h3>
+    <p>Only if you allow it, and only while you are using the app. See <a href="#location">Location</a>.</p>
+
+    <h3>Calendar and photos</h3>
+    <p>When you add an event, the app asks for permission to add events to your calendar. It has write-only access and cannot read your existing calendar. When you pick a profile photo, the app receives only the photo you select, not your whole library.</p>
+
+    <h3>Notifications</h3>
+    <p>If you turn on notifications, the app registers your device with Firebase Cloud Messaging and subscribes it to the topics that match your notification preferences.</p>
+
+    <h3>Analytics and crash reports</h3>
+    <p>When Analytics is switched on, we collect usage events such as the places you view, favourites you add or remove, search terms and how many results they returned, directions requests, and whether you signed in or continued as a guest. Firebase also records technical information such as device model, iOS version, app version and crash reports. You can switch this off in Me &gt; Privacy Settings.</p>
+
+    <h3>This website</h3>
+    <p>This website does not use cookies, advertising, or third-party analytics. If you email us, we receive your email address and whatever you choose to include in your message.</p>
+
+    <h2 id="how-we-use-it">3. How we use it</h2>
+    <ul>
+      <li>To show places and events that suit your family, and to find places near you</li>
+      <li>To sync your saved items and preferences across your devices</li>
+      <li>To personalise suggestions, if Personalisation is on</li>
+      <li>To fix crashes and improve the app, if Analytics is on</li>
+      <li>To send notifications you have asked for, and marketing notifications only if you opt in</li>
+      <li>To answer your support emails and keep the service secure</li>
+    </ul>
+
+    <h2 id="location">4. Location</h2>
+    <p>If you allow location access, the app uses your iPhone’s location to show nearby places and estimate travel time. It asks for a single location fix when needed rather than tracking you continuously. You can turn this off with the Location Usage switch in Me &gt; Privacy Settings, or in iPhone Settings &gt; ChildrenGoWhere. Without location you can still browse and choose a location manually.</p>
+
+    <h2 id="sharing">5. Who we share it with</h2>
+    <p>We do not sell your personal information, and the app contains no advertising or third-party tracking SDKs. We use these service providers to run the app:</p>
+    <ul>
+      <li><strong>Google Firebase</strong> for sign-in, database, file storage, push notifications, analytics and crash reporting. See <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase privacy information</a>.</li>
+      <li><strong>Apple</strong> for Sign in with Apple, Apple Maps directions and push notification delivery. See <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s Privacy Policy</a>.</li>
+    </ul>
+    <p>We may also disclose information if the law requires it.</p>
+
+    <h2 id="where-stored">6. Where it is stored</h2>
+    <p>Data you sync to your account is stored with Firebase on Google Cloud infrastructure, which may be located in countries other than Singapore. Data for guests, and recent searches, stay on your device.</p>
+
+    <h2 id="your-choices">7. Your choices and rights</h2>
+    <p>In Me &gt; Privacy Settings you can control, independently:</p>
+    <ul>
+      <li><strong>Location Usage:</strong> on by default</li>
+      <li><strong>Personalisation:</strong> on by default</li>
+      <li><strong>Analytics:</strong> on by default. Turning it off stops analytics and crash reporting.</li>
+      <li><strong>Marketing Notifications:</strong> off by default</li>
+    </ul>
+    <p>You can also change notification preferences in Settings, edit your profile in Personal Information, use Export My Data to share a summary of your profile, preferences and saved places, and manage permissions in iPhone Settings.</p>
+    <p>If you are in Singapore, you can ask us to give you access to, or correct, personal data we hold about you, or withdraw your consent, by emailing <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a>.</p>
+
+    <h2 id="retention">8. Retention and deletion</h2>
+    <p>We keep your account data while your account exists. You can delete your account in the app under Me &gt; Settings &gt; Privacy Settings &gt; Delete Account, which removes your sign-in and your profile record. If you also want your saved places, collections, family members and profile photo erased from our servers, email us from your account’s address and we will do so. Analytics and crash data are kept according to Firebase’s retention settings. Guest data is removed when you delete the app.</p>
+
+    <h2 id="children">9. Children’s privacy</h2>
+    <p>ChildrenGoWhere is designed for parents and caregivers, not for children, and we do not knowingly collect personal information directly from children. A parent or caregiver may add family members, including children, with a name, relationship and age group. You can edit or remove them at any time. If you believe a child has given us personal information, email us and we will delete it.</p>
+
+    <h2 id="security">10. Security</h2>
+    <p>We use Firebase security features and encrypted connections to protect your data. No online service is perfectly secure, so please use a strong, unique password and keep your device up to date.</p>
+
+    <h2 id="changes">11. Changes to this policy</h2>
+    <p>We may update this policy from time to time. We will change the “Last updated” date at the top, and for significant changes we will tell you in the app or on this site.</p>
+
+    <h2 id="contact">12. Contact us</h2>
+    <p>Questions or requests? Email <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a>. You can also visit our <a href="{{BASE}}/support/">Support page</a>.</p>
+  </div>
+</div>
