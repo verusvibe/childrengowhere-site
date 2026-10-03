@@ -24,12 +24,19 @@ function resolveSite() {
   // Empty strings (for example from a skipped CI step) count as "not set".
   const envUrl = process.env.SITE_URL || undefined;
   const envBase = process.env.BASE_PATH || undefined;
+  // An explicit non-empty BASE_PATH is a deliberate override (for example subpath testing).
+  if (envBase !== undefined) {
+    const origin = envUrl ? new URL(envUrl).origin : 'http://localhost:4173';
+    const base = normBase(envBase);
+    return { base, siteUrl: origin + base };
+  }
+  // A configured custom domain always wins: CI reports http:// until HTTPS is enforced.
+  if (cfg.customDomain) return { base: '', siteUrl: `https://${cfg.customDomain}` };
   if (envUrl) {
     const u = new URL(envUrl);
-    const base = envBase !== undefined ? normBase(envBase) : normBase(u.pathname);
+    const base = normBase(u.pathname);
     return { base, siteUrl: u.origin + base };
   }
-  if (cfg.customDomain && envBase === undefined) return { base: '', siteUrl: `https://${cfg.customDomain}` };
   if (cfg.siteUrl) {
     const u = new URL(cfg.siteUrl);
     const base = envBase !== undefined ? normBase(envBase) : normBase(u.pathname);
