@@ -308,7 +308,7 @@ function buildJsonLd(page, html) {
 }
 
 // ---------- render pages ----------
-const PAGES = ['index.html', 'privacy/index.html', 'support/index.html', '404.html'];
+const PAGES = ['index.html', 'privacy/index.html', 'terms/index.html', 'support/index.html', '404.html'];
 const written = []; // { rel, text }
 const sitemapEntries = [];
 

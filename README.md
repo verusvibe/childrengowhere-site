@@ -2,7 +2,7 @@
 
 Static marketing, support and privacy site for the ChildrenGoWhere iOS app. It deploys to GitHub Pages and works both as a project site (`https://<user>.github.io/<repo>/`) and on a custom domain.
 
-Pages: landing page (problem, features, screenshots, One-Pager, North Star Metric, FAQ), `/support/`, `/privacy/`, `/404.html`.
+Pages: landing page (problem, features, screenshots, One-Pager, North Star Metric, FAQ), `/support/`, `/privacy/`, `/terms/`, `/404.html`.
 
 ## Quick start
 
@@ -47,7 +47,8 @@ site.config.json      the only file you normally edit
 | `siteUrl` | Optional fallback origin plus path, used only when CI does not supply one. |
 | `contactEmail` | Shown on Support and Privacy and used in structured data. |
 | `supportResponseTime` | Text shown on the Support page. Confirm this is a promise you can keep. |
-| `privacyUpdated`, `privacyUpdatedLabel` | Drive the "Last updated" line, sitemap `lastmod` and JSON-LD. Change them whenever the policy text changes. |
+| `privacyUpdated`, `privacyUpdatedLabel` | Drive the Privacy Policy "Last updated" line, sitemap `lastmod` and JSON-LD. Change them whenever the policy text changes. |
+| `termsUpdated`, `termsUpdatedLabel` | The same for the Terms of Service. |
 
 ## How URLs work
 
@@ -104,16 +105,14 @@ Nothing below has been run for you. GitHub Pages on a free plan needs a public r
 | Marketing URL | `<site url>/` |
 | Support URL | `<site url>/support/` |
 | Privacy Policy URL | `<site url>/privacy/` |
+| Terms of Use (optional custom EULA link) | `<site url>/terms/` |
 
 ## Before you go live
 
 - [ ] Choose the repository name and, if wanted, the custom domain.
 - [ ] Fill in `appStoreUrl` and `appStoreId` when the app is approved.
-- [ ] Have the Privacy Policy reviewed by a lawyer, and add the legal entity name if required.
-- [ ] Confirm the support response time and decide whether to use a forwarding alias instead of a personal address (the email is in public HTML and will attract spam).
+- [ ] Have the Privacy Policy and Terms of Service reviewed by a lawyer, and add the legal entity name if required. The open decisions are listed in the comment at the top of `src/terms/index.html`.
+- [ ] Point the iOS app's `AppLinks.termsOfService` at `<site url>/terms/` (it currently uses Apple's standard EULA).
+- [ ] Confirm the support response time, and make sure the `contactEmail` mailbox (currently `hello@childrengowhere.com`, on the domain's iCloud mail) is monitored. The address is in public HTML, so expect some spam.
 - [ ] Choose a `LICENSE` (none is included).
 - [ ] Review copy for claims that are not yet true in the shipping build.
-
-## Known gap in the iOS app (affects Privacy Policy section 8)
-
-In-app **Delete Account** currently deletes the sign-in and the `users/{uid}` profile document only. Collections and family members live in subcollections, and the profile photo lives in Cloud Storage, so they remain until removed by hand. The policy says so honestly and offers erasure on request. When the app is fixed, simplify section 8 and bump `privacyUpdated`.

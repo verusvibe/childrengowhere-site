@@ -9,11 +9,9 @@ modified: cfg.privacyUpdated
   DRAFT: written from the app's actual behaviour (iOS source, FEATURES.md, privacy toggles).
   Needs legal review before launch. When the text changes, update privacyUpdated and
   privacyUpdatedLabel in site.config.json (they also drive the sitemap lastmod and JSON-LD).
-  Open items for the app team:
-    - Account deletion currently removes the profile document and sign-in only. When it also
-      removes collections, family members and the Storage avatar, simplify section 8.
-    - Google and Facebook sign-in buttons exist but are not configured. Add them to section 2
-      if/when they ship.
+  Open item for the app team:
+    - Google and Facebook sign-in are behind remote flags. Add them to section 2 if/when they
+      are switched on.
 -->
 <section class="page-hero">
   <div class="container">
@@ -62,7 +60,7 @@ modified: cfg.privacyUpdated
     <h2 id="what-we-collect">2. Information we collect</h2>
     <h3>Account information</h3>
     <p>If you sign in with Apple or with email and password, we receive your name and email address. With Sign in with Apple you may choose to hide your email, in which case Apple gives us a private relay address. Passwords are handled by Firebase Authentication and are never visible to us.</p>
-    <p>If you continue as a guest, the app creates an anonymous identifier so that features work. We do not collect your name or email, and your saved items stay on your device.</p>
+    <p>If you continue as a guest, the app creates an anonymous account so that features work. We do not collect your name or email. Your favourites, collections and preferences are saved to that anonymous account in Firebase, so they are kept when you reopen the app, but they cannot be moved to another device or linked to you. Just opening and browsing the app, without choosing to continue as a guest, does not store anything about you on our servers.</p>
 
     <h3>Profile details you choose to add</h3>
     <p>Display name, phone number, country or region, and a profile photo. When you are signed in, your profile photo is also uploaded to Firebase Storage so it follows you to other devices.</p>
@@ -83,7 +81,7 @@ modified: cfg.privacyUpdated
     <p>If you turn on notifications, the app registers your device with Firebase Cloud Messaging and subscribes it to the topics that match your notification preferences.</p>
 
     <h3>Analytics and crash reports</h3>
-    <p>When Analytics is switched on, we collect usage events such as the places you view, favourites you add or remove, search terms and how many results they returned, directions requests, and whether you signed in or continued as a guest. Firebase also records technical information such as device model, iOS version, app version and crash reports. You can switch this off in Me &gt; Privacy Settings.</p>
+    <p>When Analytics is switched on, we collect usage events such as the places you view, favourites you add or remove, how many results a search returned (but not what you searched for), directions requests, and whether you signed in or continued as a guest. Firebase also records technical information such as device model, iOS version, app version and crash reports. You can switch this off in Me &gt; Privacy Settings.</p>
 
     <h3>This website</h3>
     <p>This website does not use cookies, advertising, or third-party analytics. If you email us, we receive your email address and whatever you choose to include in your message.</p>
@@ -110,7 +108,7 @@ modified: cfg.privacyUpdated
     <p>We may also disclose information if the law requires it.</p>
 
     <h2 id="where-stored">6. Where it is stored</h2>
-    <p>Data you sync to your account is stored with Firebase on Google Cloud infrastructure, which may be located in countries other than Singapore. Data for guests, and recent searches, stay on your device.</p>
+    <p>Your account data, including guest accounts, is stored in Firebase’s database in Google Cloud’s Singapore region. Profile photos are stored with Firebase Storage, and analytics and crash reports are processed by Google; these may be handled in countries other than Singapore. Recent searches stay on your device and are cleared when you sign out.</p>
 
     <h2 id="your-choices">7. Your choices and rights</h2>
     <p>In Me &gt; Privacy Settings you can control, independently:</p>
@@ -124,7 +122,8 @@ modified: cfg.privacyUpdated
     <p>If you are in Singapore, you can ask us to give you access to, or correct, personal data we hold about you, or withdraw your consent, by emailing <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a>.</p>
 
     <h2 id="retention">8. Retention and deletion</h2>
-    <p>We keep your account data while your account exists. You can delete your account in the app under Me &gt; Settings &gt; Privacy Settings &gt; Delete Account, which removes your sign-in and your profile record. If you also want your saved places, collections, family members and profile photo erased from our servers, email us from your account’s address and we will do so. Analytics and crash data are kept according to Firebase’s retention settings. Guest data is removed when you delete the app.</p>
+    <p>We keep your account data while your account exists. You can delete your account in the app under Me &gt; Settings &gt; Privacy Settings &gt; Delete Account. For your security you will be asked to confirm your password, or to confirm with Apple if you use Sign in with Apple. Deleting your account permanently removes from our servers your sign-in, your profile and profile photo, your favourites, collections and saved preferences, and the family members you added. If you used Sign in with Apple, the app’s access to your Apple ID is also revoked. Your device’s notification registration is cancelled and the analytics identifier on your device is reset.</p>
+    <p>Analytics and crash data that were already sent are kept according to Firebase’s retention settings and are not linked to your name or email. Guest accounts have no delete option in the app; if you used the app as a guest and want that data erased, email us and we will remove it.</p>
 
     <h2 id="children">9. Children’s privacy</h2>
     <p>ChildrenGoWhere is designed for parents and caregivers, not for children, and we do not knowingly collect personal information directly from children. A parent or caregiver may add family members, including children, with a name, relationship and age group. You can edit or remove them at any time. If you believe a child has given us personal information, email us and we will delete it.</p>
@@ -136,6 +135,6 @@ modified: cfg.privacyUpdated
     <p>We may update this policy from time to time. We will change the “Last updated” date at the top, and for significant changes we will tell you in the app or on this site.</p>
 
     <h2 id="contact">12. Contact us</h2>
-    <p>Questions or requests? Email <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a>. You can also visit our <a href="{{BASE}}/support/">Support page</a>.</p>
+    <p>Questions or requests? Email <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a>. You can also visit our <a href="{{BASE}}/support/">Support page</a>. The rules for using the app are in our <a href="{{BASE}}/terms/">Terms of Service</a>.</p>
   </div>
 </div>
