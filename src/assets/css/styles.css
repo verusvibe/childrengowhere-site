@@ -804,6 +804,11 @@ mark.hl {
 .sticky-cta .btn { flex: none; white-space: nowrap; padding: 0 16px; }
 .sticky-cta .btn__icon { display: none; }
 .sticky-cta__close { width: 44px; height: 44px; flex: none; }
+@media (max-width: 380px) {
+  .sticky-cta { padding-left: 10px; }
+  .sticky-cta__text { display: none; }
+  .sticky-cta .btn { flex: 1; }
+}
 @media (min-width: 1040px) { .sticky-cta { display: none !important; } }
 
 /* ---------- Inner pages (support / privacy / 404) ---------- */

@@ -111,7 +111,7 @@ Nothing below has been run for you. GitHub Pages on a free plan needs a public r
 ## Before you go live
 
 - [ ] Choose the repository name and, if wanted, the custom domain.
-- [ ] Fill in `appStoreUrl` and `appStoreId` when the app is approved.
+- [x] `appStoreUrl` and `appStoreId` are set (app live on the App Store since 22 Oct 2026).
 - [ ] Have the Privacy Policy and Terms of Service reviewed by a lawyer, and add the legal entity name if required. The open decisions are listed in the comment at the top of `src/terms/index.html`.
 - [ ] Point the iOS app's `AppLinks.termsOfService` at `<site url>/terms/` (it currently uses Apple's standard EULA).
 - [ ] Confirm the support response time, and make sure the `contactEmail` mailbox (currently `hello@childrengowhere.com`, on the domain's iCloud mail) is monitored. The address is in public HTML, so expect some spam.
