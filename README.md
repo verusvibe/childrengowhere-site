@@ -31,7 +31,8 @@ src/                  page sources, partials, CSS, JS and generated images
   404.html
   partials/           layout, header, footer, sticky CTA
   assets/             css, js, img (generated), icons (generated)
-source-images/        the 8 App Store screenshots and the app icon (never published)
+source-images/        the 8 App Store screenshots and the app icon (never published); copies of
+                      the 6.5" set in ../Design/Store Assets/ios/iPhone-6.5 — re-copy after each release
 scripts/              build.mjs, check.mjs, serve.mjs, images.mjs
 site.config.json      the only file you normally edit
 .github/workflows/    pages.yml (build, check, deploy)

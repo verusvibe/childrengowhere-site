@@ -10,3 +10,8 @@ dist-*/
 
 # Local authoring notes, not part of the public site
 LANDING_PAGE_PROMPT.md
+
+# Audits and store assets live outside every repo (../Audits, ../Design)
+/Audits/
+/security-audit/
+/performance-audit/
