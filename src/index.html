@@ -1,6 +1,6 @@
 ---
 title: ChildrenGoWhere: Kid-Friendly Places & Events Singapore
-description: Find kid-friendly places and family events in Singapore. Filter by age, budget and weather, plan the visit and get directions. Free for iPhone and iPad.
+description: Find kid-friendly places and family events in Singapore. Filter by age, budget and weather, plan the visit and get directions. Free on iPhone, iPad and Android.
 schema: org,website,app,webpage,faq
 preload: shot-01-phone
 bodyClass: is-landing
@@ -12,14 +12,14 @@ bodyClass: is-landing
       <h1 id="hero-title">Find your next <mark class="hl">family day out</mark> in Singapore</h1>
       <p class="lead">Kid-friendly places and events, filtered by your child’s age, your budget and the weather, with opening hours, crowd levels and directions in one place.</p>
       <div class="hero__cta" data-hero-cta>
-        {{> cta}}
+        {{> stores}}
         <a class="btn btn--ghost" href="#how-it-works">See how it works</a>
       </div>
       {{> cta-note}}
       <ul class="chips" aria-label="Highlights">
         <li>Free, no in-app purchases</li>
         <li>No sign-up needed</li>
-        <li>Directions in Apple Maps</li>
+        <li>Directions in Apple or Google Maps</li>
         <li>Made for Singapore</li>
       </ul>
     </div>
@@ -179,7 +179,7 @@ bodyClass: is-landing
       <div class="feature__body">
         <span class="tag-pill p-orange">Getting there</span>
         <h3>Get there the easy way</h3>
-        <p>Open directions in Apple Maps by car, on foot or on public transport.</p>
+        <p>Open directions in Apple Maps on iPhone and iPad, or Google Maps on Android, by car, on foot or on public transport.</p>
         <ul class="ticks">
           <li>Nearest MRT and bus stop, plus parking information, where available</li>
           <li>Share a place with family on WhatsApp, Messages or Facebook</li>
@@ -230,7 +230,7 @@ bodyClass: is-landing
       </li>
       <li class="step">
         <h3>Go &amp; save</h3>
-        <p>Get directions in Apple Maps, add events to your calendar and save favourites to a collection.</p>
+        <p>Get directions in Apple Maps or Google Maps, add events to your calendar and save favourites to a collection.</p>
       </li>
     </ol>
   </div>
@@ -333,7 +333,7 @@ bodyClass: is-landing
         <li><strong>Plan the visit</strong>Hours, crowd levels, best time and visit duration</li>
         <li><strong>Place details</strong>Good for ages, facilities, safety and accessibility</li>
         <li><strong>Events</strong>Family festivals with one-tap add to calendar</li>
-        <li><strong>Directions</strong>Apple Maps by car, on foot or public transport</li>
+        <li><strong>Directions</strong>Apple Maps or Google Maps, by car, on foot or public transport</li>
         <li><strong>Collections</strong>Favourites, named collections and visited history</li>
         <li><strong>Family profiles</strong>Family members with their own age groups</li>
         <li><strong>Sync or guest</strong>Sign in to sync devices, or use it as a guest</li>
@@ -341,8 +341,8 @@ bodyClass: is-landing
 
       <h3>At a glance</h3>
       <dl class="glance">
-        <div><dt>Platform</dt><dd>iPhone and iPad, iOS 18 or later</dd></div>
-        <div><dt>Built with</dt><dd>SwiftUI</dd></div>
+        <div><dt>Platform</dt><dd>iPhone, iPad and Android</dd></div>
+        <div><dt>Built with</dt><dd>SwiftUI and Jetpack Compose</dd></div>
         <div><dt>Backend</dt><dd>Firebase</dd></div>
         <div><dt>Market</dt><dd>Singapore</dd></div>
         <div><dt>Price</dt><dd>Free, no in-app purchases</dd></div>
@@ -452,11 +452,11 @@ bodyClass: is-landing
       </details>
       <details class="faq-item">
         <summary>Will it read my calendar?</summary>
-        <div class="faq-answer"><p>No. When you add an event, ChildrenGoWhere asks permission to add it to your calendar. It cannot read your existing events.</p></div>
+        <div class="faq-answer"><p>No. ChildrenGoWhere never reads your calendar. On iPhone and iPad it asks permission to add events only. On Android it opens your calendar app with the event details filled in, and you choose whether to save it.</p></div>
       </details>
       <details class="faq-item">
         <summary>What do I need to run it?</summary>
-        <div class="faq-answer"><p>An iPhone or iPad running iOS 18 or later.</p></div>
+        <div class="faq-answer"><p>An iPhone or iPad running iOS 18 or later, or an Android phone running Android 7.0 or later.</p></div>
       </details>
       <details class="faq-item">
         <summary>How do I delete my account and data?</summary>
@@ -470,8 +470,8 @@ bodyClass: is-landing
   <div class="container">
     <div class="cta-band on-dark">
       <h2 id="download-title">Discover amazing places and activities your kids will love.</h2>
-      <p>Free for iPhone and iPad. No sign-up needed to start exploring.</p>
-      {{> cta variant=light}}
+      <p>Free on iPhone, iPad and Android. No sign-up needed to start exploring.</p>
+      {{> stores variant=light}}
       {{> cta-note}}
     </div>
   </div>

@@ -139,8 +139,8 @@ async function ogImage() {
   <text x="72" y="300" font-family="${font}" font-weight="700" font-size="46" fill="#17202E">Kid-friendly places &amp;</text>
   <text x="72" y="356" font-family="${font}" font-weight="700" font-size="46" fill="#17202E">events in Singapore</text>
   <text x="72" y="430" font-family="Helvetica Neue,Arial,sans-serif" font-size="30" fill="#4A5568">Filter by age, budget and weather.</text>
-  <rect x="72" y="480" width="400" height="64" rx="32" fill="#1F63D6"/>
-  <text x="272" y="522" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-weight="700" font-size="27" fill="#fff">Free for iPhone and iPad</text>
+  <rect x="72" y="480" width="580" height="64" rx="32" fill="#1F63D6"/>
+  <text x="362" y="522" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-weight="700" font-size="27" fill="#fff">Free on iPhone, iPad and Android</text>
 </svg>`);
   await sharp(svg).composite([{ input: rounded, left: 720, top: 70 }]).png({ compressionLevel: 9 })
     .toFile(path.join(OUT, 'og-image.png'));

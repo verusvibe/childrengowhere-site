@@ -49,6 +49,9 @@ function resolveSite() {
 const { base: BASE, siteUrl: SITE_URL } = resolveSite();
 const BUILD_DATE = process.env.BUILD_DATE || new Date().toISOString().slice(0, 10);
 const LIVE = Boolean(cfg.appStoreUrl);
+const PLAY = Boolean(cfg.googlePlayUrl);
+// Google's official badge, shipped unmodified (its transparent margin is the required clear space).
+const PLAY_BADGE = { src: 'google-play-badge-en.png', width: 646, height: 250 };
 
 // ---------- helpers ----------
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -148,9 +151,19 @@ const helpers = {
     const cls = ['btn', a.variant === 'light' ? 'btn--light' : 'btn--primary', a.size === 'sm' ? 'btn--sm' : '', a.class || '']
       .filter(Boolean).join(' ');
     if (LIVE) {
-      return `<a class="${cls}" href="${esc(cfg.appStoreUrl)}" rel="noopener">${DL_ICON}<span>${a.short ? 'Get the app' : 'Download on the App Store'}</span></a>`;
+      const android = a.short && PLAY ? ` data-android-href="${esc(cfg.googlePlayUrl)}"` : '';
+      return `<a class="${cls}" href="${esc(cfg.appStoreUrl)}"${android} rel="noopener">${DL_ICON}<span>${a.short ? 'Get the app' : 'Download on the App Store'}</span></a>`;
     }
     return `<button type="button" class="${cls}" disabled>${DL_ICON}<span>${a.short ? 'Coming soon' : 'Coming soon on the App Store'}</span></button>`;
+  },
+
+  // App Store button plus the official Google Play badge, side by side.
+  stores: (a) => {
+    const appStore = helpers.cta({ variant: a.variant });
+    if (!PLAY) return appStore;
+    const badge = `<a class="play-badge" href="${esc(cfg.googlePlayUrl)}" rel="noopener" aria-label="Get ChildrenGoWhere on Google Play">` +
+      `<img src="${BASE}/assets/badges/${PLAY_BADGE.src}" width="${PLAY_BADGE.width}" height="${PLAY_BADGE.height}" alt="" decoding="async"></a>`;
+    return `<div class="store-row">${appStore}${badge}</div>`;
   },
 
   'cta-note': () => (LIVE ? '' : '<p class="cta-note">Launching on the App Store soon. This page will link straight to it the moment it is live.</p>'),
@@ -274,7 +287,8 @@ function buildJsonLd(page, html) {
     const shots = Object.keys(imgManifest).filter((k) => /^shot-\d\d-full$/.test(k)).sort();
     const app = {
       '@type': 'MobileApplication', '@id': `${SITE_URL}/#app`, name: cfg.siteName, url: `${SITE_URL}/`,
-      description: page.description, operatingSystem: 'iOS', softwareRequirements: 'Requires iOS 18.0 or later',
+      description: page.description, operatingSystem: PLAY ? 'iOS, Android' : 'iOS',
+      softwareRequirements: PLAY ? 'Requires iOS 18.0 or later, or Android 7.0 or later' : 'Requires iOS 18.0 or later',
       applicationCategory: 'LifestyleApplication', inLanguage: 'en-SG', isAccessibleForFree: true,
       image: `${SITE_URL}/assets/img/og-image.png`,
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'SGD' },
@@ -284,7 +298,8 @@ function buildJsonLd(page, html) {
         'Family events with one-tap add to calendar', 'Favourites and collections'],
       publisher: { '@id': `${SITE_URL}/#org` },
     };
-    if (LIVE) app.installUrl = cfg.appStoreUrl;
+    const installs = [LIVE && cfg.appStoreUrl, PLAY && cfg.googlePlayUrl].filter(Boolean);
+    if (installs.length) app.installUrl = installs.length === 1 ? installs[0] : installs;
     graph.push(app);
   }
   if (types.includes('webpage')) {
@@ -374,7 +389,7 @@ if (cfg.customDomain) await writeFile(path.join(OUT, 'CNAME'), `${cfg.customDoma
 // ---------- copy only referenced images/icons ----------
 const corpus = written.map((w) => w.text).join('\n');
 const wanted = new Set();
-for (const m of corpus.matchAll(/assets\/(img|icons)\/([\w.\-]+)/g)) wanted.add(`${m[1]}/${m[2]}`);
+for (const m of corpus.matchAll(/assets\/(img|icons|badges)\/([\w.\-]+)/g)) wanted.add(`${m[1]}/${m[2]}`);
 for (const f of ['icons/favicon.ico', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png']) wanted.add(f);
 let copied = 0;
 for (const rel of wanted) {
@@ -404,4 +419,5 @@ console.log(`Built ${PAGES.length} pages, ${copied} assets -> ${path.relative(ro
 console.log(`  SITE_URL = ${SITE_URL}`);
 console.log(`  BASE     = "${BASE}"`);
 console.log(`  App Store link: ${LIVE ? 'live' : 'coming-soon state'}`);
+console.log(`  Google Play link: ${PLAY ? 'live' : 'not set'}`);
 console.log(`  Output size: ${(bytes / 1024 / 1024).toFixed(2)} MB`);

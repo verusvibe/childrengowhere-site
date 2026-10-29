@@ -11,6 +11,11 @@
     new ResizeObserver(() => root.style.setProperty('--header-h', `${header.offsetHeight}px`)).observe(header);
   }
 
+  // Offer Android visitors the Google Play link on the compact "Get the app" buttons.
+  if (/Android/i.test(navigator.userAgent)) {
+    doc.querySelectorAll('a[data-android-href]').forEach((a) => { a.href = a.dataset.androidHref; });
+  }
+
   // Mobile navigation (disclosure pattern).
   const toggle = doc.querySelector('.menu-toggle');
   const nav = doc.getElementById('site-nav');
