@@ -2,7 +2,7 @@
 
 Static marketing, support and privacy site for the ChildrenGoWhere iOS app. It deploys to GitHub Pages and works both as a project site (`https://<user>.github.io/<repo>/`) and on a custom domain.
 
-Pages: landing page (problem, features, screenshots, One-Pager, North Star Metric, FAQ), `/support/`, `/privacy/`, `/terms/`, `/404.html`.
+Pages: landing page (problem, features, screenshots, One-Pager, North Star Metric, FAQ), `/support/`, `/privacy/`, `/terms/`, `/delete-account/`, `/404.html`.
 
 ## Quick start
 
@@ -43,6 +43,7 @@ site.config.json      the only file you normally edit
 | Key | Meaning |
 | --- | --- |
 | `appStoreUrl` | Full App Store URL. While empty, every download button shows a disabled "Coming soon" state. |
+| `googlePlayUrl` | Google Play listing URL. Adds Google's official badge next to the App Store button, and offers Google Play to Android visitors on the compact buttons. Leave empty to hide it. |
 | `appStoreId` | Numeric App Store ID. Enables the Smart App Banner and is omitted while empty. |
 | `customDomain` | e.g. `www.example.com`. Writes a `CNAME` file and makes URLs root-relative. Leave empty for a project site. |
 | `siteUrl` | Optional fallback origin plus path, used only when CI does not supply one. |
@@ -106,13 +107,16 @@ Nothing below has been run for you. GitHub Pages on a free plan needs a public r
 | Marketing URL | `<site url>/` |
 | Support URL | `<site url>/support/` |
 | Privacy Policy URL | `<site url>/privacy/` |
+| Google Play: account deletion URL (Data safety) | `<site url>/delete-account/` |
 | Terms of Use (optional custom EULA link) | `<site url>/terms/` |
 
 ## Before you go live
 
 - [ ] Choose the repository name and, if wanted, the custom domain.
 - [x] `appStoreUrl` and `appStoreId` are set (app live on the App Store since 22 Oct 2026).
-- [ ] Have the Privacy Policy and Terms of Service reviewed by a lawyer, and add the legal entity name if required. The open decisions are listed in the comment at the top of `src/terms/index.html`.
+- [ ] Enter `<site url>/delete-account/` in the Play Console (Data safety) and keep its promises: reply within 3 business days, finish within 30, backups clear within 14 days.
+- [ ] Confirm where the Firebase database and Storage bucket live, then add the region to Privacy section 6.
+- [ ] Have the Privacy Policy, Terms of Service and deletion page reviewed by a lawyer, and add the legal entity name if required. The open decisions are listed in the comment at the top of `src/terms/index.html`.
 - [ ] Point the iOS app's `AppLinks.termsOfService` at `<site url>/terms/` (it currently uses Apple's standard EULA).
 - [ ] Confirm the support response time, and make sure the `contactEmail` mailbox (currently `hello@childrengowhere.com`, on the domain's iCloud mail) is monitored. The address is in public HTML, so expect some spam.
 - [ ] Choose a `LICENSE` (none is included).

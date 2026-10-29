@@ -1,0 +1,81 @@
+---
+title: Delete Your ChildrenGoWhere Account: Steps and Requests
+description: How to delete your ChildrenGoWhere account and data on iPhone, iPad or Android, in the app or by email, plus what is removed and what is kept for 14 days.
+schema: org,website,webpage,breadcrumb
+breadcrumb: Delete your account
+modified: cfg.privacyUpdated
+---
+<!--
+  DRAFT: describes the in-app deletion in both apps (both delete the user's subcollections,
+  profile document, Storage photo and Firebase sign-in) and the email fallback. Needs legal review.
+  This is the URL to enter in the Google Play Console (Data safety > account deletion).
+  Promises made here, which the owner must be able to keep:
+    - reply within 3 business days, finish within 30 days;
+    - manual deletion in the Firebase console (Auth user, users/{uid} and its subcollections,
+      avatars/{uid}.jpg) for email requests;
+    - deleted data can stay in Firestore backups for up to 14 days.
+  Keep this page and section 8 of the Privacy Policy in step.
+-->
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{BASE}}/">Home</a> / <span aria-current="page">Delete your account</span></nav>
+    <h1>Delete your account</h1>
+    <p class="lead">You can delete your ChildrenGoWhere account and the data in it at any time, on iPhone, iPad and Android. This page covers both ways to do it.</p>
+  </div>
+</section>
+
+<div class="container page-body">
+  <div class="prose">
+    <div class="note">
+      <p><strong>In short</strong></p>
+      <ul>
+        <li>The fastest way is inside the app. It takes less than a minute and nothing needs to be sent to us.</li>
+        <li>If you cannot use the app, email us from your account’s address. We reply within 3 business days and finish within 30 days.</li>
+        <li>Deleting your account cannot be undone.</li>
+      </ul>
+    </div>
+
+    <h2 id="in-the-app">Delete in the app</h2>
+    <ol>
+      <li>Open ChildrenGoWhere and go to the <strong>Me</strong> tab.</li>
+      <li>Open <strong>Settings</strong>, then <strong>Privacy Settings</strong>, and choose <strong>Delete Account</strong>. You can also find it under <strong>Account &amp; Security</strong>.</li>
+      <li>Confirm that you want to delete your account.</li>
+      <li>For your security, confirm your password. If you sign in with Apple, confirm with Apple instead.</li>
+    </ol>
+    <p>When it finishes, you are signed out and your account no longer exists.</p>
+
+    <h2 id="what-is-deleted">What is deleted</h2>
+    <ul>
+      <li>Your sign-in (your email address and password, or your Sign in with Apple link)</li>
+      <li>Your profile: name, phone number, country or region, and preferences</li>
+      <li>Your profile photo</li>
+      <li>Your favourites, collections and visited places</li>
+      <li>The family members you added, including their names and age groups</li>
+    </ul>
+    <p>If you used Sign in with Apple, the app’s access to your Apple ID is also removed. The analytics identifier on your device is reset.</p>
+
+    <h2 id="what-is-kept">What we keep, and for how long</h2>
+    <ul>
+      <li><strong>Backups:</strong> we back up our database for disaster recovery. Deleted data can stay in those backups for up to 14 days, and is then removed.</li>
+      <li><strong>Analytics and crash reports:</strong> data that was already sent is kept under Firebase’s retention settings. It is not linked to your name or email.</li>
+      <li><strong>Emails with us:</strong> we may keep the emails we exchange with you about your request as a record of it.</li>
+    </ul>
+    <p>The full picture is in section 8 of our <a href="{{BASE}}/privacy/#retention">Privacy Policy</a>.</p>
+
+    <h2 id="by-email">If you cannot use the app</h2>
+    <p>If you lost your device, forgot your password, or no longer have the app installed, you can ask us to delete your account.</p>
+    <ol>
+      <li>Email <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a> from the email address on your account.</li>
+      <li>Use the subject <strong>Delete my ChildrenGoWhere account</strong>, and tell us the name on the account and how you sign in (email or Apple). Never send your password.</li>
+      <li>We reply within 3 business days, and may ask you to confirm that the account is yours.</li>
+      <li>We delete the account and its data within 30 days of your request, and email you when it is done.</li>
+    </ol>
+    <p><a class="btn btn--primary" href="mailto:{{cfg.contactEmail}}?subject=Delete%20my%20ChildrenGoWhere%20account&amp;body=Please%20delete%20my%20ChildrenGoWhere%20account%20and%20its%20data.%0A%0AName%20on%20the%20account%3A%0ASign-in%20method%20(email%20or%20Apple)%3A%0A">Email a deletion request</a></p>
+
+    <h2 id="guests">If you used the app as a guest</h2>
+    <p>Guest data is not linked to your name or email, so we usually cannot tell which guest account is yours. If you want guest data removed, email us and we will look into it. If you later create an account, you can delete that account as described above.</p>
+
+    <h2 id="questions">Questions</h2>
+    <p>Email <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a> or visit our <a href="{{BASE}}/support/">Support page</a>.</p>
+  </div>
+</div>

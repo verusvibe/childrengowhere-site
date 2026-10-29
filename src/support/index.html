@@ -30,7 +30,7 @@ breadcrumb: Support
       <li><strong>What happened</strong>What you expected, and what you saw instead.</li>
       <li><strong>How to reproduce it</strong>The steps you took, and a screenshot if you can.</li>
     </ul>
-    <p><a class="btn btn--ghost btn--sm" href="mailto:{{cfg.contactEmail}}?subject=ChildrenGoWhere%20problem%20report&amp;body=Device%20model%3A%0AiOS%20version%3A%0AApp%20version%3A%0A%0AWhat%20happened%3A%0A%0ASteps%20to%20reproduce%3A%0A">Start a problem report</a></p>
+    <p><a class="btn btn--ghost btn--sm" href="mailto:{{cfg.contactEmail}}?subject=ChildrenGoWhere%20problem%20report&amp;body=Device%20model%3A%0AOS%20version%3A%0AApp%20version%3A%0A%0AWhat%20happened%3A%0A%0ASteps%20to%20reproduce%3A%0A">Start a problem report</a></p>
   </div>
 
   <div class="prose">
@@ -59,15 +59,19 @@ breadcrumb: Support
     </details>
     <details class="faq-item">
       <summary>How do I delete my account?</summary>
-      <div class="faq-answer"><p>Go to Me &gt; Settings &gt; Privacy Settings &gt; Delete Account. For security, you may need to sign in again first. If deletion does not work, sign out, sign back in and try again, or email <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a> and we will help.</p></div>
+      <div class="faq-answer"><p>Go to Me &gt; Settings &gt; Privacy Settings &gt; Delete Account, on iPhone, iPad or Android. For security, you may need to confirm your password (or confirm with Apple) first. If you cannot use the app, or deletion does not work, follow the steps on our <a href="{{BASE}}/delete-account/">Delete your account</a> page, or email <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a> and we will help.</p></div>
     </details>
     <details class="faq-item">
       <summary>How do I get a copy of my data?</summary>
       <div class="faq-answer"><p>Go to Me &gt; Settings &gt; Privacy Settings &gt; Export My Data to share a summary of your profile, preferences and saved places stored on your device. For anything more, email us.</p></div>
     </details>
     <details class="faq-item">
+      <summary>Why am I not getting notifications?</summary>
+      <div class="faq-answer"><p>Notifications are optional. Turn on the topics you want in Me &gt; Settings &gt; Notification Preferences, and allow notifications for ChildrenGoWhere in your device’s Settings. On Android 13 and later the app asks for permission the first time you open Notification Preferences.</p></div>
+    </details>
+    <details class="faq-item">
       <summary>Does adding an event read my calendar?</summary>
-      <div class="faq-answer"><p>No. ChildrenGoWhere only has permission to add the events you choose. It cannot read your existing calendar events.</p></div>
+      <div class="faq-answer"><p>No. ChildrenGoWhere never reads your calendar. On iPhone and iPad it asks permission to add events only. On Android it opens your calendar app with the event details filled in, and you choose whether to save it.</p></div>
     </details>
     <details class="faq-item">
       <summary>A place or event is missing or out of date. What should I do?</summary>

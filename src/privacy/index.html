@@ -6,8 +6,12 @@ breadcrumb: Privacy Policy
 modified: cfg.privacyUpdated
 ---
 <!--
-  DRAFT: written from the app's actual behaviour (iOS source, FEATURES.md, privacy toggles).
-  Needs legal review before launch. When the text changes, update privacyUpdated and
+  DRAFT: written from the apps' actual behaviour (iOS and Android source, FEATURES.md, privacy
+  toggles). Needs legal review before launch. Still open for the owner and a lawyer:
+    - Name of the legal operator (section 1 says only "we"). See the comment in terms/index.html.
+    - Where the Firebase database and Storage bucket actually live. Section 6 says "Google Cloud"
+      until that is confirmed; add the region once it is.
+    - Whether guest accounts can be deleted in the Android app (iOS has no option). When the text changes, update privacyUpdated and
   privacyUpdatedLabel in site.config.json (they also drive the sitemap lastmod and JSON-LD).
   Open item for the app team:
     - Google and Facebook sign-in are behind remote flags. Add them to section 2 if/when they
@@ -32,7 +36,7 @@ modified: cfg.privacyUpdated
         <li>We do not sell your personal information and we do not show ads.</li>
         <li>Location is optional. It is used to show places near you and estimate travel time.</li>
         <li>Analytics and crash reporting are on by default, and you can switch them off.</li>
-        <li>You can delete your account from inside the app.</li>
+        <li>You can delete your account from inside the app, or by email if you cannot use the app. See <a href="{{BASE}}/delete-account/">how to delete your account</a>.</li>
       </ul>
     </div>
 
@@ -55,11 +59,11 @@ modified: cfg.privacyUpdated
     </nav>
 
     <h2 id="who-we-are">1. Who we are</h2>
-    <p>ChildrenGoWhere (“we”, “us”) is an iPhone and iPad app and website for families in Singapore. If you have questions about this policy or your data, email <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a>.</p>
+    <p>ChildrenGoWhere (“we”, “us”) is an app for iPhone, iPad and Android, and a website, for families in Singapore. If you have questions about this policy or your data, email <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a>.</p>
 
     <h2 id="what-we-collect">2. Information we collect</h2>
     <h3>Account information</h3>
-    <p>If you sign in with Apple or with email and password, we receive your name and email address. With Sign in with Apple you may choose to hide your email, in which case Apple gives us a private relay address. Passwords are handled by Firebase Authentication and are never visible to us.</p>
+    <p>If you sign in with Apple or with email and password, we receive your name and email address. With Sign in with Apple you may choose to hide your email, in which case Apple gives us a private relay address. Passwords are handled by Firebase Authentication and are never visible to us. On Android, Sign in with Apple opens in your browser.</p>
     <p>If you continue as a guest, the app creates an anonymous account so that features work. We do not collect your name or email. Your favourites, collections and preferences are saved to that anonymous account in Firebase, so they are kept when you reopen the app, but they cannot be moved to another device or linked to you. Just opening and browsing the app, without choosing to continue as a guest, does not store anything about you on our servers.</p>
 
     <h3>Profile details you choose to add</h3>
@@ -75,13 +79,17 @@ modified: cfg.privacyUpdated
     <p>Only if you allow it, and only while you are using the app. See <a href="#location">Location</a>.</p>
 
     <h3>Calendar and photos</h3>
-    <p>When you add an event, the app asks for permission to add events to your calendar. It has write-only access and cannot read your existing calendar. When you pick a profile photo, the app receives only the photo you select, not your whole library.</p>
+    <p>When you add an event to your calendar, the app never reads your existing events. On iPhone and iPad it asks permission to add events only. On Android it opens your calendar app with the event details filled in, and you choose whether to save it. When you pick a profile photo, the app receives only the photo you select through the system photo picker, not your whole library.</p>
 
     <h3>Notifications</h3>
-    <p>If you turn on notifications, the app registers your device with Firebase Cloud Messaging and subscribes it to the topics that match your notification preferences.</p>
+    <p>If you turn on notifications, the app registers your device with Firebase Cloud Messaging and subscribes it to the topics that match your notification preferences. On Android 13 and later the app asks for permission before showing notifications.</p>
 
     <h3>Analytics and crash reports</h3>
-    <p>When Analytics is switched on, we collect usage events such as the places you view, favourites you add or remove, how many results a search returned (but not what you searched for), directions requests, and whether you signed in or continued as a guest. Firebase also records technical information such as device model, iOS version, app version and crash reports. You can switch this off in Me &gt; Privacy Settings.</p>
+    <p>When Analytics is switched on, we collect usage events such as the places you view, how many results a search returned (but not what you searched for), and whether you signed in or continued as a guest. The iPhone and iPad app also records when you add or remove a favourite or ask for directions. Firebase also records technical information such as device model, operating system version, app version and crash reports. You can switch this off in Me &gt; Privacy Settings.</p>
+    <p>We do not show ads. The app does not use your advertising identifier, and it does not track you across other companies’ apps and websites.</p>
+
+    <h3>Device checks and app settings</h3>
+    <p>To block abuse and automated traffic, the app uses Firebase App Check, which has your device prove that it is running a genuine copy of the app (Apple App Attest on iPhone and iPad, Google Play Integrity on Android). This sends a device token to Apple or Google and to Firebase. The app also downloads settings, such as which features are switched on, from Firebase Remote Config, which uses a Firebase installation identifier.</p>
 
     <h3>This website</h3>
     <p>This website does not use cookies, advertising, or third-party analytics. If you email us, we receive your email address and whatever you choose to include in your message.</p>
@@ -97,18 +105,19 @@ modified: cfg.privacyUpdated
     </ul>
 
     <h2 id="location">4. Location</h2>
-    <p>If you allow location access, the app uses your device’s location to show nearby places and estimate travel time. It asks for a single location fix when needed rather than tracking you continuously. You can turn this off with the Location Usage switch in Me &gt; Privacy Settings, or in your device’s Settings &gt; ChildrenGoWhere. Without location you can still browse and choose a location manually.</p>
+    <p>If you allow location access, the app uses your device’s location to show nearby places and estimate travel time. It asks for a single location fix when needed rather than tracking you continuously. On Android you can allow approximate or precise location. You can turn this off with the Location Usage switch in Me &gt; Privacy Settings, or in your device’s Settings &gt; ChildrenGoWhere. Without location you can still browse and choose all of Singapore or one of its five regions instead. We save the area you choose as a preference.</p>
 
     <h2 id="sharing">5. Who we share it with</h2>
     <p>We do not sell your personal information, and the app contains no advertising or third-party tracking SDKs. We use these service providers to run the app:</p>
     <ul>
-      <li><strong>Google Firebase</strong> for sign-in, database, file storage, push notifications, analytics and crash reporting. See <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase privacy information</a>.</li>
-      <li><strong>Apple</strong> for Sign in with Apple, Apple Maps directions and push notification delivery. See <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s Privacy Policy</a>.</li>
+      <li><strong>Google Firebase</strong> for sign-in, database, file storage, push notifications, analytics, crash reporting, App Check and Remote Config. See <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase privacy information</a>.</li>
+      <li><strong>Google Maps and Google Play services</strong> on Android, for the map on place pages, directions and Play Integrity checks. Google receives standard technical data, such as your IP address, when a map is shown. See <a href="https://policies.google.com/privacy" rel="noopener">Google’s Privacy Policy</a>.</li>
+      <li><strong>Apple</strong> for Sign in with Apple, Apple Maps directions on iPhone and iPad, App Attest and push notification delivery. See <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s Privacy Policy</a>.</li>
     </ul>
     <p>We may also disclose information if the law requires it.</p>
 
     <h2 id="where-stored">6. Where it is stored</h2>
-    <p>Your account data, including guest accounts, is stored in Firebase’s database in Google Cloud’s Singapore region. Profile photos are stored with Firebase Storage, and analytics and crash reports are processed by Google; these may be handled in countries other than Singapore. Recent searches stay on your device and are cleared when you sign out.</p>
+    <p>Your account data, including guest accounts, is stored with Google Firebase on Google Cloud infrastructure, which may be located outside Singapore. Profile photos are stored with Firebase Storage, and analytics and crash reports are processed by Google, which may also handle them in other countries. Recent searches stay on your device and are cleared when you sign out.</p>
 
     <h2 id="your-choices">7. Your choices and rights</h2>
     <p>In Me &gt; Privacy Settings you can control, independently:</p>
@@ -118,23 +127,25 @@ modified: cfg.privacyUpdated
       <li><strong>Analytics:</strong> on by default. Turning it off stops analytics and crash reporting.</li>
       <li><strong>Marketing Notifications:</strong> off by default</li>
     </ul>
-    <p>You can also change notification preferences in Settings, edit your profile in Personal Information, use Export My Data to share a summary of your profile, preferences and saved places, and manage permissions in iPhone Settings.</p>
+    <p>You can also change notification preferences in Settings, edit your profile in Personal Information, use Export My Data to share a summary of your profile, preferences and saved places, and manage permissions in your device’s Settings.</p>
     <p>If you are in Singapore, you can ask us to give you access to, or correct, personal data we hold about you, or withdraw your consent, by emailing <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a>.</p>
 
     <h2 id="retention">8. Retention and deletion</h2>
-    <p>We keep your account data while your account exists. You can delete your account in the app under Me &gt; Settings &gt; Privacy Settings &gt; Delete Account. For your security you will be asked to confirm your password, or to confirm with Apple if you use Sign in with Apple. Deleting your account permanently removes from our servers your sign-in, your profile and profile photo, your favourites, collections and saved preferences, and the family members you added. If you used Sign in with Apple, the app’s access to your Apple ID is also revoked. Your device’s notification registration is cancelled and the analytics identifier on your device is reset.</p>
-    <p>Analytics and crash data that were already sent are kept according to Firebase’s retention settings and are not linked to your name or email. Guest accounts have no delete option in the app; if you used the app as a guest and want that data erased, email us and we will remove it.</p>
+    <p>We keep your account data while your account exists. You can delete your account in the app under Me &gt; Settings &gt; Privacy Settings &gt; Delete Account, on iPhone, iPad and Android. For your security you will be asked to confirm your password, or to confirm with Apple if you use Sign in with Apple. Deleting your account removes from our servers your sign-in, your profile and profile photo, your favourites, collections and saved preferences, and the family members you added. If you used Sign in with Apple, the app’s access to your Apple ID is also revoked. The analytics identifier on your device is reset.</p>
+    <p>If you cannot use the app, for example because you lost your device or forgot your password, you can ask us to delete your account instead. The steps are on our <a href="{{BASE}}/delete-account/">Delete your account</a> page. We reply within 3 business days and complete the deletion within 30 days, after confirming that the request comes from the email address on the account.</p>
+    <p>Our database is backed up for disaster recovery. Deleted data can remain in those backups for up to 14 days, after which it is removed. Analytics and crash data that were already sent are kept according to Firebase’s retention settings and are not linked to your name or email.</p>
+    <p>Guest data is not linked to your name or email, so we usually cannot tell which guest account is yours, and the app may not offer a delete option for it. If you want a guest account removed, email us and we will look into it.</p>
 
     <h2 id="children">9. Children’s privacy</h2>
     <p>ChildrenGoWhere is designed for parents and caregivers, not for children, and we do not knowingly collect personal information directly from children. A parent or caregiver may add family members, including children, with a name, relationship and age group. You can edit or remove them at any time. If you believe a child has given us personal information, email us and we will delete it.</p>
 
     <h2 id="security">10. Security</h2>
-    <p>We use Firebase security features and encrypted connections to protect your data. No online service is perfectly secure, so please use a strong, unique password and keep your device up to date.</p>
+    <p>We use Firebase security features, App Check and encrypted connections to protect your data. No online service is perfectly secure, so please use a strong, unique password and keep your device up to date.</p>
 
     <h2 id="changes">11. Changes to this policy</h2>
     <p>We may update this policy from time to time. We will change the “Last updated” date at the top, and for significant changes we will tell you in the app or on this site.</p>
 
     <h2 id="contact">12. Contact us</h2>
-    <p>Questions or requests? Email <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a>. You can also visit our <a href="{{BASE}}/support/">Support page</a>. The rules for using the app are in our <a href="{{BASE}}/terms/">Terms of Service</a>.</p>
+    <p>Questions or requests? Email <a href="mailto:{{cfg.contactEmail}}">{{cfg.contactEmail}}</a>. You can also visit our <a href="{{BASE}}/support/">Support page</a>, or see <a href="{{BASE}}/delete-account/">how to delete your account</a>. The rules for using the app are in our <a href="{{BASE}}/terms/">Terms of Service</a>.</p>
   </div>
 </div>
