@@ -157,10 +157,13 @@ const helpers = {
     return `<button type="button" class="${cls}" disabled>${DL_ICON}<span>${a.short ? 'Coming soon' : 'Coming soon on the App Store'}</span></button>`;
   },
 
-  // App Store button plus the official Google Play badge, side by side.
+  // Official Apple and Google badges, side by side, each shipped unmodified.
   stores: (a) => {
-    const appStore = helpers.cta({ variant: a.variant });
-    if (!PLAY) return appStore;
+    const appStore = LIVE
+      ? `<a class="store-badge" href="${esc(cfg.appStoreUrl)}" rel="noopener" aria-label="Download ChildrenGoWhere on the App Store">` +
+        `<img src="${BASE}/assets/badges/app-store-badge-en.svg" width="120" height="40" alt="" decoding="async"></a>`
+      : helpers.cta({ variant: a.variant });
+    if (!PLAY) return `<div class="store-row">${appStore}</div>`;
     const badge = `<a class="play-badge" href="${esc(cfg.googlePlayUrl)}" rel="noopener" aria-label="Get ChildrenGoWhere on Google Play">` +
       `<img src="${BASE}/assets/badges/${PLAY_BADGE.src}" width="${PLAY_BADGE.width}" height="${PLAY_BADGE.height}" alt="" decoding="async"></a>`;
     return `<div class="store-row">${appStore}${badge}</div>`;

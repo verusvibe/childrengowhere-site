@@ -438,11 +438,14 @@ mark.hl {
 }
 .hero__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 28px 0 8px; }
 .cta-note { margin: 6px 0 0; max-width: 34em; font-size: 0.875rem; color: var(--ink-2); }
-.store-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.store-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
 .cta-band .store-row { justify-content: center; }
 /* The badge image carries Google's required clear space; negative margins keep the visible badge flush with neighbouring buttons. */
 .play-badge { display: inline-flex; flex: none; margin: -12px; border-radius: 14px; }
 .play-badge img { width: 200px; height: auto; }
+/* Apple's badge ships without margin; 52px tall to match Google's visible badge. */
+.store-badge { display: inline-flex; flex: none; border-radius: 10px; }
+.store-badge img { height: 52px; width: auto; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 24px 0 0; }
 .chips li {
